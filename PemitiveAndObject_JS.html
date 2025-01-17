@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Primitives and Objects</title>
+</head>
+<body>
+    <h1>JavaScript Primitives and Objects</h1>
+    <p>In JavaScript, data types are categorized into two main groups:</p>
+    <ul>
+        <li><strong>Primitive Types</strong>: Basic data types that hold a single value.</li>
+        <li><strong>Objects</strong>: Complex data structures that can store collections of data and functionality.</li>
+    </ul>
+
+    <h2>Primitive Types</h2>
+    <p>Primitive types are immutable and represent simple values. They include:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>String</code></td>
+                <td>Sequence of characters.</td>
+                <td><code>"Hello, World!"</code></td>
+            </tr>
+            <tr>
+                <td><code>Number</code></td>
+                <td>Numeric values, including integers and floating-point numbers.</td>
+                <td><code>42</code>, <code>3.14</code></td>
+            </tr>
+            <tr>
+                <td><code>BigInt</code></td>
+                <td>Represents integers larger than <code>Number.MAX_SAFE_INTEGER</code>.</td>
+                <td><code>12345678901234567890n</code></td>
+            </tr>
+            <tr>
+                <td><code>Boolean</code></td>
+                <td>Represents logical values: <code>true</code> or <code>false</code>.</td>
+                <td><code>true</code>, <code>false</code></td>
+            </tr>
+            <tr>
+                <td><code>Undefined</code></td>
+                <td>Indicates a variable that has been declared but not assigned a value.</td>
+                <td><code>let x; // x is undefined</code></td>
+            </tr>
+            <tr>
+                <td><code>Null</code></td>
+                <td>Represents an intentional absence of value.</td>
+                <td><code>let y = null;</code></td>
+            </tr>
+            <tr>
+                <td><code>Symbol</code></td>
+                <td>Unique and immutable value, often used as object property keys.</td>
+                <td><code>Symbol("id")</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Examples of Primitives</h3>
+    <pre><code>// String
+let greeting = "Hello, World!";
+console.log(greeting); // Output: Hello, World!
+
+// Number
+let age = 25;
+console.log(age); // Output: 25
+
+// BigInt
+let largeNumber = 12345678901234567890n;
+console.log(largeNumber); // Output: 12345678901234567890n
+
+// Boolean
+let isJavaScriptFun = true;
+console.log(isJavaScriptFun); // Output: true
+
+// Undefined
+let notAssigned;
+console.log(notAssigned); // Output: undefined
+
+// Null
+let emptyValue = null;
+console.log(emptyValue); // Output: null
+
+// Symbol
+let uniqueKey = Symbol("key");
+console.log(uniqueKey); // Output: Symbol(key)</code></pre>
+
+    <h2>Objects</h2>
+    <p>Objects are collections of key-value pairs. They are mutable and can store multiple values and functions.</p>
+    <h3>Types of Objects</h3>
+    <ul>
+        <li><strong>Object Literals</strong>: Simplest way to create objects.</li>
+        <li><strong>Arrays</strong>: Ordered list of values.</li>
+        <li><strong>Functions</strong>: Callable objects with reusable code.</li>
+        <li><strong>Date</strong>: Represents date and time.</li>
+        <li><strong>Other Built-in Objects</strong>: Examples include <code>Math</code>, <code>RegExp</code>, and <code>Set</code>.</li>
+    </ul>
+
+    <h3>Examples of Objects</h3>
+    <pre><code>// Object Literal
+let person = {
+    name: "Alice",
+    age: 30,
+    greet: function() {
+        console.log("Hello, " + this.name);
+    }
+};
+console.log(person.name); // Output: Alice
+person.greet(); // Output: Hello, Alice
+
+// Array
+let colors = ["red", "green", "blue"];
+console.log(colors[1]); // Output: green
+
+// Function
+function add(a, b) {
+    return a + b;
+}
+console.log(add(5, 3)); // Output: 8
+
+// Date
+let today = new Date();
+console.log(today.toDateString()); // Output: Current date in readable format
+
+// Set
+let uniqueNumbers = new Set([1, 2, 3, 3]);
+console.log(uniqueNumbers); // Output: Set { 1, 2, 3 }</code></pre>
+
+    <h2>Comparison: Primitives vs. Objects</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Primitive</th>
+                <th>Object</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mutability</td>
+                <td>Immutable</td>
+                <td>Mutable</td>
+            </tr>
+            <tr>
+                <td>Storage</td>
+                <td>Single value</td>
+                <td>Key-value pairs</td>
+            </tr>
+            <tr>
+                <td>Example</td>
+                <td><code>let x = 10;</code></td>
+                <td><code>let obj = { key: "value" };</code></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
