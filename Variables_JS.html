@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables</title>
+   
+</head>
+<body>
+    <h1>JavaScript Variables</h1>
+    <p>In JavaScript, variables are used to store data that can be referenced and manipulated later in a program. Variables act as containers for values and are essential for writing dynamic and interactive code.</p>
+
+    <h2>Declaring Variables</h2>
+    <p>JavaScript provides three ways to declare variables:</p>
+    <ul>
+        <li><code>var</code>: The old way to declare variables, introduced in ES5 and earlier.</li>
+        <li><code>let</code>: A modern way to declare variables, introduced in ES6, with block scope.</li>
+        <li><code>const</code>: Used to declare constants whose values cannot be reassigned, also introduced in ES6.</li>
+    </ul>
+
+    <h2>General Example of Variables</h2>
+    <p>Below is a general example demonstrating variable declaration and usage:</p>
+    <pre><code>// Declaring variables
+var firstName = "Alice";
+let age = 25;
+const country = "USA";
+
+// Using variables
+console.log("Name:", firstName); // Output: Name: Alice
+console.log("Age:", age);        // Output: Age: 25
+console.log("Country:", country); // Output: Country: USA
+
+// Updating variables
+firstName = "Bob";
+age = 30;
+console.log("Updated Name:", firstName); // Output: Updated Name: Bob
+console.log("Updated Age:", age);        // Output: Updated Age: 30
+
+// Trying to update a constant
+// country = "Canada"; // Error: Assignment to constant variable</code></pre>
+
+    <h2>1. <code>var</code></h2>
+    <p>The <code>var</code> keyword was the original way to declare variables in JavaScript. It has function scope or global scope but no block scope.</p>
+    <pre><code>// Example using var
+var name = 'Alice';
+console.log(name); // Output: Alice
+
+if (true) {
+    var age = 25;
+}
+console.log(age); // Output: 25 (var does not have block scope)</code></pre>
+    <p><strong>Key Points about <code>var</code>:</strong></p>
+    <ul>
+        <li>Variables declared with <code>var</code> are hoisted and initialized with <code>undefined</code>.</li>
+        <li>They can be re-declared and updated within the same scope.</li>
+        <li>It is generally recommended to avoid using <code>var</code> in modern JavaScript.</li>
+    </ul>
+
+    <h2>2. <code>let</code></h2>
+    <p>The <code>let</code> keyword is used to declare variables with block scope. This means the variable exists only within the enclosing block.</p>
+    <pre><code>// Example using let
+let name = 'Bob';
+console.log(name); // Output: Bob
+
+if (true) {
+    let age = 30;
+    console.log(age); // Output: 30
+}
+// console.log(age); // Error: age is not defined (block scope)</code></pre>
+    <p><strong>Key Points about <code>let</code>:</strong></p>
+    <ul>
+        <li>Variables declared with <code>let</code> are hoisted but not initialized, causing a <code>ReferenceError</code> if accessed before declaration.</li>
+        <li>They cannot be re-declared in the same scope but can be updated.</li>
+        <li>Use <code>let</code> when the variable's value needs to change.</li>
+    </ul>
+
+    <h2>3. <code>const</code></h2>
+    <p>The <code>const</code> keyword is used to declare constants. These are variables whose values cannot be reassigned. Like <code>let</code>, <code>const</code> has block scope.</p>
+    <pre><code>// Example using const
+const name = 'Charlie';
+console.log(name); // Output: Charlie
+
+// name = 'Dave'; // Error: Assignment to constant variable
+
+if (true) {
+    const age = 35;
+    console.log(age); // Output: 35
+}
+// console.log(age); // Error: age is not defined (block scope)</code></pre>
+    <p><strong>Key Points about <code>const</code>:</strong></p>
+    <ul>
+        <li>Constants must be initialized at the time of declaration.</li>
+        <li>The value of a constant cannot be updated or re-declared.</li>
+        <li>While the constant itself cannot be reassigned, its contents (if an object or array) can be modified.</li>
+    </ul>
+    <pre><code>// Example of modifying a const object's properties
+const person = { name: 'Eve', age: 40 };
+person.age = 41; // Allowed
+console.log(person); // Output: { name: 'Eve', age: 41 }</code></pre>
+
+    <h2>Differences Between <code>var</code>, <code>let</code>, and <code>const</code></h2>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th><code>var</code></th>
+                <th><code>let</code></th>
+                <th><code>const</code></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Scope</td>
+                <td>Function or global</td>
+                <td>Block</td>
+                <td>Block</td>
+            </tr>
+            <tr>
+                <td>Reassignment</td>
+                <td>Allowed</td>
+                <td>Allowed</td>
+                <td>Not allowed</td>
+            </tr>
+            <tr>
+                <td>Hoisting</td>
+                <td>Yes (initialized to <code>undefined</code>)</td>
+                <td>Yes (not initialized, gives <code>ReferenceError</code> if accessed before declaration)</td>
+                <td>Yes (not initialized, gives <code>ReferenceError</code> if accessed before declaration)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>By understanding the differences between <code>var</code>, <code>let</code>, and <code>const</code>, you can choose the appropriate keyword based on your requirements and write cleaner, more maintainable code.</p>
+</body>
+</html>
